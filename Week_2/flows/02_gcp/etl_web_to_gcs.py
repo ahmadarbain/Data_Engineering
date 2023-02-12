@@ -42,7 +42,7 @@ def write_gcs(path: Path) -> None:
 @flow()
 def etl_web_to_gcs(year:int, color:str, months:int):
     """The main ETL Function"""
-    slack_webhook_block = SlackWebhook.load("de-zoomcamp")
+    slack_webhook_block = SlackWebhook.load("de-zoomcamp", validate=False)
     slack_webhook_block.notify("Hello from Prefect!")
 
     dataset_file = f"{color}_tripdata_{year}-{months:02}"
