@@ -158,11 +158,85 @@ Run your deployment in a local subprocess (the default if you don’t specify an
 
 How many rows were processed by the script?
 
-- 88,019
+- 88,019 [+]
 - 192,297
 - 88,605
 - 190,225
 
+**Answer**
+</br>
+```
+Downloading flow code from storage at ''
+09:29:57 PM
+Created task run 'fetch-0' for task 'fetch'
+09:33:13 PM
+Executing 'fetch-0' immediately...
+09:33:13 PM
+Finished in state Completed()
+09:33:18 PM
+fetch-0
+Created task run 'clean-0' for task 'clean'
+09:33:18 PM
+Executing 'clean-0' immediately...
+09:33:18 PM
+   VendorID lpep_pickup_datetime  ... trip_type congestion_surcharge
+0       2.0  2020-11-01 00:08:23  ...       1.0                 2.75
+1       2.0  2020-11-01 00:23:32  ...       1.0                 0.00
+
+[2 rows x 20 columns]
+09:33:18 PM
+clean-0
+columns: VendorID                        float64
+lpep_pickup_datetime     datetime64[ns]
+lpep_dropoff_datetime    datetime64[ns]
+store_and_fwd_flag               object
+RatecodeID                      float64
+PULocationID                      int64
+DOLocationID                      int64
+passenger_count                 float64
+trip_distance                   float64
+fare_amount                     float64
+extra                           float64
+mta_tax                         float64
+tip_amount                      float64
+tolls_amount                    float64
+ehail_fee                       float64
+improvement_surcharge           float64
+total_amount                    float64
+payment_type                    float64
+trip_type                       float64
+congestion_surcharge            float64
+dtype: object
+09:33:18 PM
+clean-0
+row: 88605
+09:33:18 PM
+clean-0
+Finished in state Completed()
+09:33:18 PM
+clean-0
+Created task run 'write_local-0' for task 'write_local'
+09:33:18 PM
+Executing 'write_local-0' immediately...
+09:33:18 PM
+Finished in state Completed()
+09:33:19 PM
+write_local-0
+Created task run 'write_gcs-0' for task 'write_gcs'
+09:33:19 PM
+Executing 'write_gcs-0' immediately...
+09:33:19 PM
+Getting bucket 'prefect-ar-de-zoomcamp'.
+09:33:19 PM
+write_gcs-0
+Uploading from 'Week_2/data/green/green_tripdata_2020-11.parquet' to the bucket 'prefect-ar-de-zoomcamp' path 'Week_2/data/green/green_tripdata_2020-11.parquet'.
+09:33:20 PM
+write_gcs-0
+Finished in state Completed()
+09:33:22 PM
+write_gcs-0
+Finished in state Completed('All states completed.')
+```
 
 
 ## Question 5. Email or Slack notifications
@@ -191,7 +265,7 @@ How many rows were processed by the script?
 - `125,268`
 - `377,922`
 - `728,390`
-- `514,392`
+- `514,392` [+]
 
 
 ## Question 6. Secrets
@@ -200,7 +274,7 @@ Prefect Secret blocks provide secure, encrypted storage in the database and obfu
 
 - 5
 - 6
-- 8
+- 8 [+]
 - 10
 
 
