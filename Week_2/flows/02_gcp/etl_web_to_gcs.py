@@ -3,6 +3,8 @@ from pathlib import Path
 from prefect import flow, task
 from prefect_gcp.cloud_storage import GcsBucket
 from random import randint
+from prefect.blocks.notifications import SlackWebhook
+
 
 @task(retries=3)
 def fetch(dataset_url: str) -> pd.DataFrame:
@@ -40,6 +42,9 @@ def write_gcs(path: Path) -> None:
 @flow()
 def etl_web_to_gcs(year:int, color:str, months:int):
     """The main ETL Function"""
+    slack_webhook_block = SlackWebhook.load("de-zoomcamp")
+    slack_webhook_block.notify("Hello from Prefect!")
+    
     dataset_file = f"{color}_tripdata_{year}-{months:02}"
     dataset_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/{color}/{dataset_file}.csv.gz"
 
