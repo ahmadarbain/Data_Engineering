@@ -3,6 +3,8 @@ from pathlib import Path
 from prefect import flow, task
 from prefect_gcp.cloud_storage import GcsBucket
 from random import randint
+from prefect.blocks.system import Secret
+
 
 @task(retries=3)
 def fetch(dataset_url: str) -> pd.DataFrame:
@@ -40,7 +42,8 @@ def write_gcs(path: Path) -> None:
 @flow()
 def etl_web_to_gcs(year:int, color:str, months:int):
     """The main ETL Function"""
-
+    secret_block = Secret.load("de-zoomcamp")
+    secret_block.get()
     dataset_file = f"{color}_tripdata_{year}-{months:02}"
     dataset_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/{color}/{dataset_file}.csv.gz"
 
