@@ -35,7 +35,7 @@ def write_local(df: pd.DataFrame, color: str, dataset_file: str) -> Path:
 @task()
 def write_gcs(path: Path) -> None:
     """Upload local parquet file to GCS"""
-    gcs_block = GcsBucket.load("de-zoomcamp")
+    gcs_block = GcsBucket.load("de-zoomcamp", validate=False)
     gcs_block.upload_from_path(from_path=path, to_path=path, timeout=90000)
     return
 
@@ -44,7 +44,7 @@ def etl_web_to_gcs(year:int, color:str, months:int):
     """The main ETL Function"""
     slack_webhook_block = SlackWebhook.load("de-zoomcamp")
     slack_webhook_block.notify("Hello from Prefect!")
-    
+
     dataset_file = f"{color}_tripdata_{year}-{months:02}"
     dataset_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/{color}/{dataset_file}.csv.gz"
 
