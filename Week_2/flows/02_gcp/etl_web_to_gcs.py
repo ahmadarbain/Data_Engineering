@@ -13,7 +13,7 @@ def fetch(dataset_url: str) -> pd.DataFrame:
     df = pd.read_csv(dataset_url, low_memory=False)
     return df
 
-@task()
+@task(log_prints=True)
 def clean(df = pd.DataFrame) -> pd.DataFrame:
     """Fix dtype issues"""
     df['lpep_pickup_datetime'] = pd.to_datetime(df['lpep_pickup_datetime'])
@@ -23,14 +23,14 @@ def clean(df = pd.DataFrame) -> pd.DataFrame:
     print(f"row: {len(df)}")
     return df
 
-@task()
+@task(log_prints=True)
 def write_local(df: pd.DataFrame, color: str, dataset_file: str) -> Path:
     """Write Dataframe out locally as parquet file"""
     path =  Path(f"Week_2/data/{color}/{dataset_file}.parquet").as_posix()
     df.to_parquet(path, compression="gzip")
     return path
 
-@task()
+@task(log_prints=True)
 def write_gcs(path: Path) -> None:
     """Upload local parquet file to GCS"""
     gcs_block = GcsBucket.load("de-zoomcamp", validate=False)
