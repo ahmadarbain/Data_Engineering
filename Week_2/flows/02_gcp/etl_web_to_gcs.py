@@ -3,8 +3,6 @@ from pathlib import Path
 from prefect import flow, task
 from prefect_gcp.cloud_storage import GcsBucket
 from random import randint
-from prefect.filesystems import GCS
-
 
 @task(retries=3)
 def fetch(dataset_url: str) -> pd.DataFrame:
@@ -35,7 +33,7 @@ def write_local(df: pd.DataFrame, color: str, dataset_file: str) -> Path:
 @task()
 def write_gcs(path: Path) -> None:
     """Upload local parquet file to GCS"""
-    gcs_block = GCS.load("de-zoomcamp", validate=False)
+    gcs_block = GcsBucket.load("de-zoomcamp", validate=False)
     gcs_block.upload_from_path(from_path=path, to_path=path, timeout=90000)
     return
 
