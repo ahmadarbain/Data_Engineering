@@ -26,7 +26,7 @@ def clean(df = pd.DataFrame) -> pd.DataFrame:
 @task()
 def write_local(df: pd.DataFrame, color: str, dataset_file: str) -> Path:
     """Write Dataframe out locally as parquet file"""
-    path =  Path(f"Week_2/data/{color}/{dataset_file}.parquet").as_posix()
+    path =  Path(f"data/{color}/{dataset_file}.parquet").as_posix()
     df.to_parquet(path, compression="gzip")
     return path
 
@@ -38,7 +38,7 @@ def write_gcs(path: Path) -> None:
     return
 
 @flow()
-def etl_web_to_gcs(year:int, color:str, month:int):
+def etl_web_to_gcs(year:int, color:str, months:int):
     """The main ETL Function"""
     dataset_file = f"{color}_tripdata_{year}-{month:02}"
     dataset_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/{color}/{dataset_file}.csv.gz"
@@ -51,5 +51,5 @@ def etl_web_to_gcs(year:int, color:str, month:int):
 if __name__ == '__main__':
     color:str = "green"
     year:int = 2019
-    month:int = 4
-    etl_web_to_gcs(year, color, month) 
+    months:int = 4
+    etl_web_to_gcs(year, color, months) 
