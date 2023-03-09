@@ -60,6 +60,6 @@ def load_to_gcs_batch(color: str, year: int, months: list):
 if __name__ == '__main__':
     color = 'fhv'
     year = 2019
-    months = [11+1 for x in list(range(4))]
+    months = [x+1 for x in list(range(4))]
     
     load_to_gcs_batch(color, year, months)

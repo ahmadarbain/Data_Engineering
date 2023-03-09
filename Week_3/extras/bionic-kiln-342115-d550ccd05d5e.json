@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "bionic-kiln-342115",
+  "private_key_id": "d550ccd05d5ec7f8439df47098ce63569b2c7f3b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC/7KYE2nHJOZKz\nHNr+wnNnDTZJby2NGDZPsL+Vj2FTVwLvYtN5VP4RKB5b2MxeP47FXVTPRkKFnTmi\n1PJrVihXTSNrXI84j4gAwquWdTQmMzGfOgmToRnT3y8DaWHEKoXwPYjz6Weu3IPm\nZPQgVNJ7gXaqbWUES8R2ytyydru4Z67+NmWCKp5vffa3RznEDNOorlodjMCgocPN\n2oDBeQG0lPgRhjkbEWHGm4KbUak/gd9CimHnsKtTIP+mTdr3VB4oAq3CbLWOkXDr\nMvHzn3hWs3Jc5VCvlmh8aXFlM79mWVxVKjhPS4h3DEBNssPPEEaLmy2TD1Ql94Sv\nSxYu61SxAgMBAAECggEAB9EGa27uoK6FtyIDGMpYWx92gSvkH+mXJ6x4BwozgWqL\nKe79VCUWImJ/BwhXvXRq9waPsk/nHGw8eVFhLKYyByky+rfGtPvigv5qsNpl5PLj\nj9u0IWU3qTF/J41KkCvXr+K/schlIsHkJNVifHEb7/AEQllpenDwB9MIBUQw7cgI\nJmbi7/C3SEpN6e0ot4M0qmo6onE0EilcUm3Z4lU0iqOPzgzjGOvyhDOVK+n1dXhp\nP22Vk+/iDxx7gGsIc2s5S9lq7GfpnXYUIEyWGoLvFz6ihjMCQ/b+t9S+Tj6ACgnk\ncCzo8JcqKSu0YKd/MRi4Q4nbALyFSsRDlrOpUyGgqQKBgQDuFbYqpqJ/uhPafyqO\ntaJRwwSx8wRnWq2T8Lm+M5/K+5+XnFisMrbzY/cyrmtYMG/xA4WgGEeMVIQYdvXP\njYFnikDaS1cqZ2010wjeu8/KBzzxTIE9h9CmrgTsQCchCNuW7qv4beLbep+lu3PS\nW4vS706rchsUS2bYtCq/4+bnSQKBgQDOXbzA6RzMKgXNmPa1nTY7AcNO+dZJoO67\ny4L3pcID5G646dYBREe7/94NGW0VqRGM0L+UjMSPp7++ffO+4WuKMK9ll2XqW3Rn\nj6ZZj02RKP4iIKH9N9YwN5ZeeDYVzq990eF4k4G1YdDQlUFR2354dApfkVklS2+J\nRrd0iXv6KQKBgHrM8g/fsRMmXBUn4ECJiPaZGzPZv9y7Vapn0LY9FF9zF6bweoAf\nDGRPnHIkqrNrEGIEygiAXW8RLK0dtr3eI+/OzJKLp6L0g8zuU7Xms09mGlXvev3M\nrp86RMnCcSxF0FVyN3tE2m0QO4YVQLEwjNc4naAqk7MNDTga/a3KFBAZAoGAX8Tk\nqeoE8UK3Ori4FYSF/FBPIUGUjsrev8wsVV1ZcpD6SVpLdH8Jg1e05wNbumehu2XM\n4tWJCtnghDjTe0wFqjX5z/240E/s73qcyodUif8qIRBf3LGi9vF1GRZUkz499vgF\n2P0rfs+MJqB9lc11HdVMUxmS81nUwzJMRQrgvDECgYB/MYrQ0VSoW71BXw9glNYj\n7o7ep0Vj6Q2DqABLmTFO90eCDOcdzBK+3xjTCU+Jz3AZQAIkc7MxL1dhnQ+t3aFc\ntQCnNp3MKt/+LFQKwMvR2rL9j/AZQqYrFjaZKL3osz/ojQ93dTUPbhWN+Ao+NeRF\nJDa5pi4pZQC4xhrvBF4iRg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "de-zoomcamp@bionic-kiln-342115.iam.gserviceaccount.com",
+  "client_id": "111146780069575456484",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/de-zoomcamp%40bionic-kiln-342115.iam.gserviceaccount.com"
+}
